@@ -1,11 +1,11 @@
 # Lego Brick Recognition
-<img align="right" width="128" height="128" src="/examples/rendered_brick_noise.jpg">
-<img align="right" width="128" height="128" src="/examples/rendered_brick2_noise.jpg">
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/ba0a4f04-ee95-4cd8-bc1b-92bed9725415)
+
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/eb16af2a-946b-4114-b626-d2315af330ae)
+
 
 This project is inspired by Jacques Mattheij's blog entry: [Sorting 2 Metric Tons of Lego][1] who uses a Deep Learning approach to sort Lego bricks. Our first goal is to improve the software side, especially creating a generic dataset for the neural network training.
 Due to the high number of bricks (10000+) and the related similarities, we plan a meaningful combination of categories and single bricks as classification task.
-
-We would be happy if you would contribute to this project! We could then provide all necessary resource files, e.g. real test images or trained models.
 
 ## Table of Contents
 1. Dataset Generation
@@ -36,7 +36,7 @@ To view the data for the first time, we generate thumbnails for each 3d file wit
 Furthermore, we extract some metadata such as category and label.
 The category distribution of all available bricks is shown below.
 
-<img src="/examples/category_distribution.svg">
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/d4007e3d-6fdd-467a-82a8-1ad02b49c4a3)
 
 To generate thumbnails i.e. for a the category 'Technic' run:
 ```python dataset/generate_thumbnails.py --dataset ./ldraw/parts/ --category Technic --output ./technic```
@@ -53,10 +53,13 @@ In future, we plan further experiments and improvements e.g. by measuring the sh
 
 The 10 most similar bricks with the part id '6549' (included itself) of a subset of all 'Technic' parts:
 
-<img src="/examples/6538b-top_images_ssim.png">
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/d294b183-fdcc-4420-a6c7-b108058a8828)
+
+
 Similarities to all other parts:
 
-<img width="600" src="/examples/6538b.svg">
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/97b5bf90-db52-445b-a6f2-07cacdb5dd2f)
+
 
 When the script is finished with creating thumbnails, a final CSV is written that contains lists of IDs for identical parts and shape-like parts.
 
@@ -109,9 +112,11 @@ Possible Reasons (further investigation needed):
 - background is relevant for generalization
 - viewing angle differ
 
-<img width="500" src="/examples/cm_resnext50_freezed.svg">
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/dfe6e1cf-1d7b-475c-bf9d-c3fd8bcc842e)
 
-<img width="350" src="/examples/loss_resnext50_freezed.svg">
+
+![image](https://github.com/kacdro/LegoBrickClassification/assets/100469610/e763d674-b21b-4130-a0b4-14197d04c14a)
+
 
 ### Big TODOs
 - reduce generalization gap by improving rendering process
